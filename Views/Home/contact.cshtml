@@ -1,0 +1,83 @@
+﻿@model _8tracks.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap1.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap1.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div>
+
+            <div class="btn-group pull-left">
+                <button class="btn btn-success" onclick="parent.location='/Home/Index'">Home</button>
+                <button class="btn btn-success" onclick="parent.location='/Home/Signup'">Sign Up</button>
+                <button class="btn btn-success" onclick="parent.location='/Home/Signin'">Sign In</button>
+                <button class="btn btn-success" onclick="parent.location='/Home/Contact'">Contact Us</button>
+            </div>
+          
+            
+            <button type="button" class="btn btn-success pull-right" onclick="parent.location='/Home/Index'">Logout</button>
+
+
+
+
+        </div>
+    </nav>
+
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <form>
+                        <label>Username</label>
+                        @Html.TextBoxFor(m => m.name)
+                        <div>
+                            @Html.ValidationMessageFor(m => m.name, string.Empty, new { @class = "text text-danger-has-error" })
+                        </div>
+                        <label>Email</label>
+                        @Html.TextBoxFor(m => m.email)<br />
+                        <label>Message</label>
+                        @Html.TextAreaFor(m=>m.comments)
+                        <br />
+                        <br />
+                        <br />
+                        <button type="submit" class="btn btn-success" onclick="parent.location='/User/Comments'">Submit</button>
+                        
+                 
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h2>Contacts</h2><br />
+                    <h5>Our Adresses</h5>
+                    <small>Lahore,Pakistan</small><br />
+                    <h5>Telephone</h5>
+                    <small>+307-4349-108</small><br />
+                    <h5>Email</h5>
+                    <small>bsfe11m032@pucit.edu.pk</small><br /><br />
+                    <h3>Miscellaneous</h3>
+                    <small>I tried so hard </small>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
